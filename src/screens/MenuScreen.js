@@ -5,7 +5,7 @@ import { OrderContext } from '../context/OrderContext';
 import { ProductContext } from '../context/ProductContext';
 
 const MenuScreen = ({ route, navigation }) => {
-  const { tableId, tableName } = route.params;
+  const { tableId = 0, tableName = 'Unknown Table' } = route.params || {};
   const { addOrder } = useContext(OrderContext);
   const { products } = useContext(ProductContext);
   const [searchQuery, setSearchQuery] = useState('');
